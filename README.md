@@ -1,19 +1,13 @@
-# issue-theia-tasks
+# HOWTO Reproduce
 
-This project can (and should) be used as a starting point for developing any SIDE plugin.
+1. Open this project in VS Code and run the extension in the development host (F5)
+2. Run the `issue-theia-tasks: Run` and observe the task running a simple echo
+3. Close VS Code and the dev host
+4. Open the project inside Theia's development host
+5. Run the command again
 
-## Warning
+When running inside Theia, the code will enter the `resolveTask` method from our provider
 
-Before developing a plug-in, the developer should check that theia does indeed implement this part of VS Code's API.  
-The link below provides a list but should not be the only source of trust as it may not be maintained.  
-https://che-incubator.github.io/vscode-theia-comparator/status.html  
+## Noteworthy environment details
 
-## Features
-
-Once cloned, this project is a simple VSCode plugin that contributes a "issue-theia-tasks: Run" command.  
-It is packed using webpack.
-
-## Notes
-
-- The `package.json` contains fields that must be manually changed by the developer for every project, such as `repository`
-- If the build does not yield any error but the extension does not start, check that every recommanded extension is installed and that the watch task did not output any warning (it will only boot if it packs successfully)
+The extension is developped in TypeScript, and packaged using Webpack ; all from VSCode's generator using `yo code` and specifying this environement. The same issue occurs even when not using Webpack
