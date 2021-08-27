@@ -1,0 +1,4 @@
+include:
+  - project: "smartfire/platform/side/side-plugins"
+    ref: "master"
+    file: "/.upstream-gitlab-ci.yml"

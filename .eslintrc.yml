@@ -1,0 +1,24 @@
+env:
+  browser: true
+  es2021: true
+extends:
+  - 'eslint:recommended'
+  - 'plugin:@typescript-eslint/recommended'
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaVersion: 2020
+  sourceType: module
+plugins:
+  - '@typescript-eslint'
+rules:
+  '@typescript-eslint/explicit-function-return-type':
+    - "warn"
+  no-console: 0
+  eqeqeq: warn
+  curly: warn
+  no-throw-literal: warn
+  semi: error
+  indent:
+    - "error"
+    - 4
+    - SwitchCase: 1
