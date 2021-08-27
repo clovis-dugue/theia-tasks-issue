@@ -10,7 +10,7 @@ https://che-incubator.github.io/vscode-theia-comparator/status.html
 
 ## Features
 
-Once cloned, this project is a simple VSCode plugin that contributes a "issue-theia-tasks: Hello World" command.  
+Once cloned, this project is a simple VSCode plugin that contributes a "issue-theia-tasks: Run" command.  
 It is packed using webpack.
 
 ## Notes

@@ -1,13 +1,8 @@
 {
 	"name": "issue-theia-tasks",
 	"displayName": "issue-theia-tasks",
-	"repository": {
-		"type": "git",
-		"url": "https://git.smartfire.pro/smartfire/platform/side/issue-theia-tasks.git"
-	},
 	"description": "",
 	"version": "0.0.1",
-	"publisher": "smartfire",
 	"engines": {
 		"vscode": "^1.46.0"
 	},
@@ -15,14 +10,33 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:issue-theia-tasks.helloWorld"
+		"onCommand:issue-theia-tasks.run"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "issue-theia-tasks.helloWorld",
-				"title": "issue-theia-tasks: Hello World"
+				"command": "issue-theia-tasks.run",
+				"title": "issue-theia-tasks: Run"
+			}
+		],
+		"taskDefinitions": [
+			{
+				"type": "custom",
+				"required": [
+					"executable",
+					"arguments"
+				],
+				"properties": {
+					"executable": {
+						"type": "string",
+						"description": "Path to the executable to run"
+					},
+					"arguments": {
+						"type": "array",
+						"description": "Array of arguments of the command"
+					}
+				}
 			}
 		]
 	},
