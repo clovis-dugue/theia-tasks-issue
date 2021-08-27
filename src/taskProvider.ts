@@ -19,10 +19,15 @@ export const customTaskProvider = vscode.tasks.registerTaskProvider(
                 )
             ];
         },
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        resolveTask(_task: vscode.Task): vscode.Task | undefined {
+        resolveTask(task: vscode.Task): vscode.Task | undefined {
             vscode.window.showErrorMessage('entered resolveTask()');
-            return undefined;
+            return new vscode.Task(
+                task.definition,
+                vscode.TaskScope.Workspace,
+                task.name ? task.name : task.definition.executable,
+                'custom',
+                new vscode.ShellExecution(task.definition.executable + " " + task.definition.arguments.join(" "))
+            );
         }
     }
 );
